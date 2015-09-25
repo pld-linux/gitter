@@ -1,7 +1,7 @@
 Summary:	Instant messaging and chat room system for developers and users of GitHub repositories
 Name:		gitter
 Version:	2.4.0
-Release:	0.3
+Release:	0.4
 License:	unknown
 Group:		X11/Applications/Networking
 Source0:	https://update.gitter.im/linux64/%{name}_%{version}_amd64.deb
