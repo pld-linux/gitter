@@ -1,0 +1,13 @@
+--- gitter-2.4.0/gitter.desktop~	2015-09-04 15:28:05.000000000 +0300
++++ gitter-2.4.0/gitter.desktop	2015-09-25 18:46:26.556325659 +0300
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Name=Gitter
+ Comment=Where developers come to talk
+-Exec=/opt/Gitter/linux64/Gitter
+-Icon=/opt/Gitter/linux64/logo.png
++Exec=gitter
++Icon=gitter
+ Terminal=false
+ Type=Application
+ Categories=Utility;
