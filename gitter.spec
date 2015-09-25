@@ -1,7 +1,7 @@
 Summary:	Instant messaging and chat room system for developers and users of GitHub repositories
 Name:		gitter
 Version:	2.4.0
-Release:	0.1
+Release:	0.2
 License:	unknown
 Group:		X11/Applications/Networking
 Source0:	https://update.gitter.im/linux64/%{name}_%{version}_amd64.deb
@@ -34,6 +34,16 @@ version=$(awk '/Version:/{print $2}' control)
 test $version = %{version}
 
 mv opt/Gitter/linux*/* .
+
+%build
+# chrome official rpm just add libudev.so.0 -> libudev.so.1 symlink, so we use similar hack here
+if [ ! -f Gitter.patched ] && grep -qE "libudev\.so\.0" Gitter; then
+	%{__sed} -i -e 's#libudev\.so\.0#libudev.so.1#g' Gitter
+	touch Gitter.patched
+else
+	echo >&2 "Hack no longer needed? No longer linked with libudev.so.0?"
+	exit 1
+fi
 
 %install
 rm -rf $RPM_BUILD_ROOT
