@@ -39,7 +39,7 @@ test $version = %{version}
 
 mv opt/Gitter/linux*/* .
 
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 # chrome official rpm just add libudev.so.0 -> libudev.so.1 symlink, so we use similar hack here
